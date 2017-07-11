@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4763A7A81EB013E900E80FAA /* MusicDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4763A7A71EB013E900E80FAA /* MusicDrawView.swift */; };
+		4763A7AA1EB01E4900E80FAA /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4763A7A91EB01E4900E80FAA /* Line.swift */; };
+		476A9A9E1EA9C5E100AA0538 /* NoteBound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A9A9D1EA9C5E100AA0538 /* NoteBound.swift */; };
+		476A9AA01EA9C72700AA0538 /* NoteEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A9A9F1EA9C72700AA0538 /* NoteEvent.swift */; };
+		476A9AA21EA9E1ED00AA0538 /* NoteEventConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476A9AA11EA9E1ED00AA0538 /* NoteEventConverter.swift */; };
+		4771D26C1EA87B5C00B9EB25 /* ClassicalChordFinderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771D26B1EA87B5C00B9EB25 /* ClassicalChordFinderTest.swift */; };
+		4771D26E1EA8874000B9EB25 /* ModernChordFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771D26D1EA8874000B9EB25 /* ModernChordFinder.swift */; };
+		4771D2701EA8883900B9EB25 /* WeightedChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4771D26F1EA8883900B9EB25 /* WeightedChord.swift */; };
+		477633A81EA5DCF3004759F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633A71EA5DCF3004759F1 /* AppDelegate.swift */; };
+		477633AA1EA5DCF3004759F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633A91EA5DCF3004759F1 /* ViewController.swift */; };
+		477633AD1EA5DCF3004759F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477633AB1EA5DCF3004759F1 /* Main.storyboard */; };
+		477633AF1EA5DCF3004759F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 477633AE1EA5DCF3004759F1 /* Assets.xcassets */; };
+		477633B21EA5DCF3004759F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 477633B01EA5DCF3004759F1 /* LaunchScreen.storyboard */; };
+		477633BD1EA5DCF3004759F1 /* harmoniaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633BC1EA5DCF3004759F1 /* harmoniaTests.swift */; };
+		477633C81EA5DD91004759F1 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633C71EA5DD91004759F1 /* Stopwatch.swift */; };
+		477633CA1EA5DDE2004759F1 /* MidiPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633C91EA5DDE2004759F1 /* MidiPlayer.swift */; };
+		477633CC1EA5DEA5004759F1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633CB1EA5DEA5004759F1 /* Note.swift */; };
+		477633CF1EA5DFEC004759F1 /* MelodyReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633CE1EA5DFEC004759F1 /* MelodyReader.swift */; };
+		477633D11EA5E48C004759F1 /* MelodyReaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633D01EA5E48C004759F1 /* MelodyReaderTest.swift */; };
+		477633DA1EA5EDB2004759F1 /* BlockChordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633D41EA5EDB2004759F1 /* BlockChordManager.swift */; };
+		477633DB1EA5EDB2004759F1 /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633D51EA5EDB2004759F1 /* Chord.swift */; };
+		477633DC1EA5EDB2004759F1 /* ChordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633D61EA5EDB2004759F1 /* ChordManager.swift */; };
+		477633DD1EA5EDB2004759F1 /* ChordStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633D71EA5EDB2004759F1 /* ChordStructure.swift */; };
+		477633DE1EA5EDB2004759F1 /* CloseNoteChordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633D81EA5EDB2004759F1 /* CloseNoteChordManager.swift */; };
+		477633DF1EA5EDB2004759F1 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633D91EA5EDB2004759F1 /* Scale.swift */; };
+		477633E31EA5EF2F004759F1 /* ChordFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633E21EA5EF2F004759F1 /* ChordFinder.swift */; };
+		477633E51EA5F072004759F1 /* CoreChord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477633E41EA5F072004759F1 /* CoreChord.swift */; };
+		47BCECDE1EA93289002BDB9A /* ModernChordFinderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BCECDD1EA93289002BDB9A /* ModernChordFinderTest.swift */; };
+		47BCECE01EA94E27002BDB9A /* MelodyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BCECDF1EA94E27002BDB9A /* MelodyPlayer.swift */; };
+		47BCECE21EA96425002BDB9A /* HarmonyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BCECE11EA96425002BDB9A /* HarmonyFactory.swift */; };
+		47BCECE51EA96D7B002BDB9A /* gs_instruments.dls in Resources */ = {isa = PBXBuildFile; fileRef = 47BCECE41EA96D7B002BDB9A /* gs_instruments.dls */; };
+		47BFA3BD1EB9638900F96E47 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFA3BC1EB9638900F96E47 /* AboutViewController.swift */; };
+		47D987031ED3DCDE00850289 /* MinorClassicalChordFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D987021ED3DCDE00850289 /* MinorClassicalChordFinder.swift */; };
+		47EAD1901EA6CF0100BB4FE5 /* ClassicalChordFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EAD18F1EA6CF0100BB4FE5 /* ClassicalChordFinder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		477633B91EA5DCF3004759F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4776339C1EA5DCF3004759F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 477633A31EA5DCF3004759F1;
+			remoteInfo = harmonia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4763A7A71EB013E900E80FAA /* MusicDrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDrawView.swift; sourceTree = "<group>"; };
+		4763A7A91EB01E4900E80FAA /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		476A9A9D1EA9C5E100AA0538 /* NoteBound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteBound.swift; sourceTree = "<group>"; };
+		476A9A9F1EA9C72700AA0538 /* NoteEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEvent.swift; sourceTree = "<group>"; };
+		476A9AA11EA9E1ED00AA0538 /* NoteEventConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteEventConverter.swift; sourceTree = "<group>"; };
+		4771D26B1EA87B5C00B9EB25 /* ClassicalChordFinderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicalChordFinderTest.swift; sourceTree = "<group>"; };
+		4771D26D1EA8874000B9EB25 /* ModernChordFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernChordFinder.swift; sourceTree = "<group>"; };
+		4771D26F1EA8883900B9EB25 /* WeightedChord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedChord.swift; sourceTree = "<group>"; };
+		477633A41EA5DCF3004759F1 /* harmonia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = harmonia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		477633A71EA5DCF3004759F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		477633A91EA5DCF3004759F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		477633AC1EA5DCF3004759F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		477633AE1EA5DCF3004759F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		477633B11EA5DCF3004759F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		477633B31EA5DCF3004759F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		477633B81EA5DCF3004759F1 /* harmoniaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = harmoniaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		477633BC1EA5DCF3004759F1 /* harmoniaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = harmoniaTests.swift; sourceTree = "<group>"; };
+		477633BE1EA5DCF3004759F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		477633C71EA5DD91004759F1 /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		477633C91EA5DDE2004759F1 /* MidiPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiPlayer.swift; sourceTree = "<group>"; };
+		477633CB1EA5DEA5004759F1 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		477633CE1EA5DFEC004759F1 /* MelodyReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MelodyReader.swift; sourceTree = "<group>"; };
+		477633D01EA5E48C004759F1 /* MelodyReaderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MelodyReaderTest.swift; sourceTree = "<group>"; };
+		477633D41EA5EDB2004759F1 /* BlockChordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockChordManager.swift; sourceTree = "<group>"; };
+		477633D51EA5EDB2004759F1 /* Chord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
+		477633D61EA5EDB2004759F1 /* ChordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChordManager.swift; sourceTree = "<group>"; };
+		477633D71EA5EDB2004759F1 /* ChordStructure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChordStructure.swift; sourceTree = "<group>"; };
+		477633D81EA5EDB2004759F1 /* CloseNoteChordManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseNoteChordManager.swift; sourceTree = "<group>"; };
+		477633D91EA5EDB2004759F1 /* Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
+		477633E21EA5EF2F004759F1 /* ChordFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChordFinder.swift; sourceTree = "<group>"; };
+		477633E41EA5F072004759F1 /* CoreChord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreChord.swift; sourceTree = "<group>"; };
+		47BCECDD1EA93289002BDB9A /* ModernChordFinderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModernChordFinderTest.swift; sourceTree = "<group>"; };
+		47BCECDF1EA94E27002BDB9A /* MelodyPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MelodyPlayer.swift; sourceTree = "<group>"; };
+		47BCECE11EA96425002BDB9A /* HarmonyFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HarmonyFactory.swift; sourceTree = "<group>"; };
+		47BCECE41EA96D7B002BDB9A /* gs_instruments.dls */ = {isa = PBXFileReference; lastKnownFileType = file; path = gs_instruments.dls; sourceTree = "<group>"; };
+		47BFA3BC1EB9638900F96E47 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		47D987021ED3DCDE00850289 /* MinorClassicalChordFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinorClassicalChordFinder.swift; sourceTree = "<group>"; };
+		47EAD18F1EA6CF0100BB4FE5 /* ClassicalChordFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicalChordFinder.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		477633A11EA5DCF3004759F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477633B51EA5DCF3004759F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		470A025D1EB2B1B0009BDFA0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				477633C71EA5DD91004759F1 /* Stopwatch.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		4776339B1EA5DCF3004759F1 = {
+			isa = PBXGroup;
+			children = (
+				477633A61EA5DCF3004759F1 /* harmonia */,
+				477633BB1EA5DCF3004759F1 /* harmoniaTests */,
+				477633A51EA5DCF3004759F1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		477633A51EA5DCF3004759F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				477633A41EA5DCF3004759F1 /* harmonia.app */,
+				477633B81EA5DCF3004759F1 /* harmoniaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		477633A61EA5DCF3004759F1 /* harmonia */ = {
+			isa = PBXGroup;
+			children = (
+				47BCECE31EA96D4E002BDB9A /* MusicAssets */,
+				470A025D1EB2B1B0009BDFA0 /* Helpers */,
+				477633E11EA5EEA6004759F1 /* BLL */,
+				477633E01EA5EDEC004759F1 /* ChordManagers */,
+				477633CD1EA5DF80004759F1 /* Models */,
+				477633A71EA5DCF3004759F1 /* AppDelegate.swift */,
+				477633A91EA5DCF3004759F1 /* ViewController.swift */,
+				47BFA3BC1EB9638900F96E47 /* AboutViewController.swift */,
+				4763A7A71EB013E900E80FAA /* MusicDrawView.swift */,
+				477633AB1EA5DCF3004759F1 /* Main.storyboard */,
+				477633AE1EA5DCF3004759F1 /* Assets.xcassets */,
+				477633B01EA5DCF3004759F1 /* LaunchScreen.storyboard */,
+				477633B31EA5DCF3004759F1 /* Info.plist */,
+			);
+			path = harmonia;
+			sourceTree = "<group>";
+		};
+		477633BB1EA5DCF3004759F1 /* harmoniaTests */ = {
+			isa = PBXGroup;
+			children = (
+				477633BC1EA5DCF3004759F1 /* harmoniaTests.swift */,
+				477633BE1EA5DCF3004759F1 /* Info.plist */,
+				477633D01EA5E48C004759F1 /* MelodyReaderTest.swift */,
+				4771D26B1EA87B5C00B9EB25 /* ClassicalChordFinderTest.swift */,
+				47BCECDD1EA93289002BDB9A /* ModernChordFinderTest.swift */,
+			);
+			path = harmoniaTests;
+			sourceTree = "<group>";
+		};
+		477633CD1EA5DF80004759F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				477633D71EA5EDB2004759F1 /* ChordStructure.swift */,
+				477633D91EA5EDB2004759F1 /* Scale.swift */,
+				477633D51EA5EDB2004759F1 /* Chord.swift */,
+				477633CB1EA5DEA5004759F1 /* Note.swift */,
+				477633E41EA5F072004759F1 /* CoreChord.swift */,
+				4771D26F1EA8883900B9EB25 /* WeightedChord.swift */,
+				476A9A9D1EA9C5E100AA0538 /* NoteBound.swift */,
+				476A9A9F1EA9C72700AA0538 /* NoteEvent.swift */,
+				4763A7A91EB01E4900E80FAA /* Line.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		477633E01EA5EDEC004759F1 /* ChordManagers */ = {
+			isa = PBXGroup;
+			children = (
+				477633D41EA5EDB2004759F1 /* BlockChordManager.swift */,
+				477633D61EA5EDB2004759F1 /* ChordManager.swift */,
+				477633D81EA5EDB2004759F1 /* CloseNoteChordManager.swift */,
+			);
+			name = ChordManagers;
+			sourceTree = "<group>";
+		};
+		477633E11EA5EEA6004759F1 /* BLL */ = {
+			isa = PBXGroup;
+			children = (
+				477633C91EA5DDE2004759F1 /* MidiPlayer.swift */,
+				477633CE1EA5DFEC004759F1 /* MelodyReader.swift */,
+				477633E21EA5EF2F004759F1 /* ChordFinder.swift */,
+				47EAD18F1EA6CF0100BB4FE5 /* ClassicalChordFinder.swift */,
+				4771D26D1EA8874000B9EB25 /* ModernChordFinder.swift */,
+				47D987021ED3DCDE00850289 /* MinorClassicalChordFinder.swift */,
+				47BCECDF1EA94E27002BDB9A /* MelodyPlayer.swift */,
+				47BCECE11EA96425002BDB9A /* HarmonyFactory.swift */,
+				476A9AA11EA9E1ED00AA0538 /* NoteEventConverter.swift */,
+			);
+			name = BLL;
+			sourceTree = "<group>";
+		};
+		47BCECE31EA96D4E002BDB9A /* MusicAssets */ = {
+			isa = PBXGroup;
+			children = (
+				47BCECE41EA96D7B002BDB9A /* gs_instruments.dls */,
+			);
+			name = MusicAssets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		477633A31EA5DCF3004759F1 /* harmonia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477633C11EA5DCF3004759F1 /* Build configuration list for PBXNativeTarget "harmonia" */;
+			buildPhases = (
+				477633A01EA5DCF3004759F1 /* Sources */,
+				477633A11EA5DCF3004759F1 /* Frameworks */,
+				477633A21EA5DCF3004759F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = harmonia;
+			productName = harmonia;
+			productReference = 477633A41EA5DCF3004759F1 /* harmonia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		477633B71EA5DCF3004759F1 /* harmoniaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477633C41EA5DCF3004759F1 /* Build configuration list for PBXNativeTarget "harmoniaTests" */;
+			buildPhases = (
+				477633B41EA5DCF3004759F1 /* Sources */,
+				477633B51EA5DCF3004759F1 /* Frameworks */,
+				477633B61EA5DCF3004759F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				477633BA1EA5DCF3004759F1 /* PBXTargetDependency */,
+			);
+			name = harmoniaTests;
+			productName = harmoniaTests;
+			productReference = 477633B81EA5DCF3004759F1 /* harmoniaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4776339C1EA5DCF3004759F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Jessee Zhang";
+				TargetAttributes = {
+					477633A31EA5DCF3004759F1 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = RYQ3897FM5;
+						ProvisioningStyle = Automatic;
+					};
+					477633B71EA5DCF3004759F1 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = RYQ3897FM5;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 477633A31EA5DCF3004759F1;
+					};
+				};
+			};
+			buildConfigurationList = 4776339F1EA5DCF3004759F1 /* Build configuration list for PBXProject "harmonia" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4776339B1EA5DCF3004759F1;
+			productRefGroup = 477633A51EA5DCF3004759F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				477633A31EA5DCF3004759F1 /* harmonia */,
+				477633B71EA5DCF3004759F1 /* harmoniaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		477633A21EA5DCF3004759F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47BCECE51EA96D7B002BDB9A /* gs_instruments.dls in Resources */,
+				477633B21EA5DCF3004759F1 /* LaunchScreen.storyboard in Resources */,
+				477633AF1EA5DCF3004759F1 /* Assets.xcassets in Resources */,
+				477633AD1EA5DCF3004759F1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477633B61EA5DCF3004759F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		477633A01EA5DCF3004759F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47BCECE01EA94E27002BDB9A /* MelodyPlayer.swift in Sources */,
+				477633CF1EA5DFEC004759F1 /* MelodyReader.swift in Sources */,
+				477633CC1EA5DEA5004759F1 /* Note.swift in Sources */,
+				477633C81EA5DD91004759F1 /* Stopwatch.swift in Sources */,
+				47D987031ED3DCDE00850289 /* MinorClassicalChordFinder.swift in Sources */,
+				477633DC1EA5EDB2004759F1 /* ChordManager.swift in Sources */,
+				477633DA1EA5EDB2004759F1 /* BlockChordManager.swift in Sources */,
+				477633AA1EA5DCF3004759F1 /* ViewController.swift in Sources */,
+				477633DD1EA5EDB2004759F1 /* ChordStructure.swift in Sources */,
+				476A9A9E1EA9C5E100AA0538 /* NoteBound.swift in Sources */,
+				476A9AA21EA9E1ED00AA0538 /* NoteEventConverter.swift in Sources */,
+				477633DE1EA5EDB2004759F1 /* CloseNoteChordManager.swift in Sources */,
+				47EAD1901EA6CF0100BB4FE5 /* ClassicalChordFinder.swift in Sources */,
+				477633E51EA5F072004759F1 /* CoreChord.swift in Sources */,
+				477633A81EA5DCF3004759F1 /* AppDelegate.swift in Sources */,
+				4763A7A81EB013E900E80FAA /* MusicDrawView.swift in Sources */,
+				477633DB1EA5EDB2004759F1 /* Chord.swift in Sources */,
+				476A9AA01EA9C72700AA0538 /* NoteEvent.swift in Sources */,
+				477633DF1EA5EDB2004759F1 /* Scale.swift in Sources */,
+				47BFA3BD1EB9638900F96E47 /* AboutViewController.swift in Sources */,
+				477633E31EA5EF2F004759F1 /* ChordFinder.swift in Sources */,
+				477633CA1EA5DDE2004759F1 /* MidiPlayer.swift in Sources */,
+				4771D26E1EA8874000B9EB25 /* ModernChordFinder.swift in Sources */,
+				4763A7AA1EB01E4900E80FAA /* Line.swift in Sources */,
+				47BCECE21EA96425002BDB9A /* HarmonyFactory.swift in Sources */,
+				4771D2701EA8883900B9EB25 /* WeightedChord.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477633B41EA5DCF3004759F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477633D11EA5E48C004759F1 /* MelodyReaderTest.swift in Sources */,
+				477633BD1EA5DCF3004759F1 /* harmoniaTests.swift in Sources */,
+				4771D26C1EA87B5C00B9EB25 /* ClassicalChordFinderTest.swift in Sources */,
+				47BCECDE1EA93289002BDB9A /* ModernChordFinderTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		477633BA1EA5DCF3004759F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 477633A31EA5DCF3004759F1 /* harmonia */;
+			targetProxy = 477633B91EA5DCF3004759F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		477633AB1EA5DCF3004759F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				477633AC1EA5DCF3004759F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		477633B01EA5DCF3004759F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				477633B11EA5DCF3004759F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		477633BF1EA5DCF3004759F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		477633C01EA5DCF3004759F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		477633C21EA5DCF3004759F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RYQ3897FM5;
+				INFOPLIST_FILE = harmonia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RayginAsian.harmonia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		477633C31EA5DCF3004759F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RYQ3897FM5;
+				INFOPLIST_FILE = harmonia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RayginAsian.harmonia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		477633C51EA5DCF3004759F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = RYQ3897FM5;
+				INFOPLIST_FILE = harmoniaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RayginAsian.harmoniaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/harmonia.app/harmonia";
+			};
+			name = Debug;
+		};
+		477633C61EA5DCF3004759F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = RYQ3897FM5;
+				INFOPLIST_FILE = harmoniaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.RayginAsian.harmoniaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/harmonia.app/harmonia";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4776339F1EA5DCF3004759F1 /* Build configuration list for PBXProject "harmonia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477633BF1EA5DCF3004759F1 /* Debug */,
+				477633C01EA5DCF3004759F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		477633C11EA5DCF3004759F1 /* Build configuration list for PBXNativeTarget "harmonia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477633C21EA5DCF3004759F1 /* Debug */,
+				477633C31EA5DCF3004759F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		477633C41EA5DCF3004759F1 /* Build configuration list for PBXNativeTarget "harmoniaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477633C51EA5DCF3004759F1 /* Debug */,
+				477633C61EA5DCF3004759F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4776339C1EA5DCF3004759F1 /* Project object */;
+}
