@@ -98,6 +98,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1E-6z-ptM">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="960" id="Nue-AX-mvR"/>
+                                        </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f5G-GH-oJw" userLabel="Container">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="696"/>
@@ -198,7 +201,6 @@
                                     <constraint firstItem="f5G-GH-oJw" firstAttribute="top" secondItem="zIl-En-iuu" secondAttribute="top" id="I1W-bv-2GQ"/>
                                     <constraint firstItem="J1E-6z-ptM" firstAttribute="leading" secondItem="zIl-En-iuu" secondAttribute="leading" id="KQ3-3J-yWI"/>
                                     <constraint firstItem="J1E-6z-ptM" firstAttribute="centerX" secondItem="zIl-En-iuu" secondAttribute="centerX" id="Pjh-ex-xfs"/>
-                                    <constraint firstItem="J1E-6z-ptM" firstAttribute="centerY" secondItem="zIl-En-iuu" secondAttribute="centerY" id="fkd-PA-SSo"/>
                                     <constraint firstItem="f5G-GH-oJw" firstAttribute="leading" secondItem="zIl-En-iuu" secondAttribute="leading" id="o0Q-hE-dFW"/>
                                     <constraint firstAttribute="bottom" secondItem="J1E-6z-ptM" secondAttribute="bottom" id="ygf-l9-Ql8"/>
                                 </constraints>
@@ -209,6 +211,7 @@
                             <constraint firstItem="IRk-rV-dZh" firstAttribute="top" secondItem="zIl-En-iuu" secondAttribute="bottom" id="7UN-57-CGg"/>
                             <constraint firstAttribute="trailing" secondItem="zIl-En-iuu" secondAttribute="trailing" id="HTc-5H-kFC"/>
                             <constraint firstItem="zIl-En-iuu" firstAttribute="leading" secondItem="vkK-Sq-eCi" secondAttribute="leading" id="L0E-LI-a2c"/>
+                            <constraint firstItem="J1E-6z-ptM" firstAttribute="width" secondItem="vkK-Sq-eCi" secondAttribute="width" id="qM0-CT-ymk"/>
                             <constraint firstItem="zIl-En-iuu" firstAttribute="top" secondItem="5zu-Je-uHp" secondAttribute="bottom" id="vlD-5D-6vk"/>
                         </constraints>
                     </view>
