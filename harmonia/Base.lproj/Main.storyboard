@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IHq-5P-XbE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IHq-5P-XbE">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,28 +22,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rma-X3-Jqb" customClass="MusicDrawView" customModule="harmonia" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="768" height="898"/>
+                                <rect key="frame" x="0.0" y="64" width="768" height="888"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dIj-vt-PLf" userLabel="OptionsContainer">
-                                <rect key="frame" x="16" y="978" width="736" height="30"/>
+                                <rect key="frame" x="16" y="968" width="736" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih9-Wt-xmB">
-                                        <rect key="frame" x="0.0" y="0.0" width="49" height="30"/>
-                                        <state key="normal" title="Record"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ih9-Wt-xmB">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Lbz-gp-aIf"/>
+                                            <constraint firstAttribute="width" constant="40" id="gaV-DZ-tEq"/>
+                                        </constraints>
+                                        <state key="normal" image="200 x 200 Record"/>
                                         <connections>
                                             <action selector="toggleRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IPe-Sd-8k7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylA-mU-NX1">
-                                        <rect key="frame" x="358.5" y="0.0" width="38" height="30"/>
-                                        <state key="normal" title="Rests"/>
-                                        <connections>
-                                            <action selector="togglePrependingRests:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UmN-pq-gPd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpP-Nh-TFS">
-                                        <rect key="frame" x="706" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="Play"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpP-Nh-TFS">
+                                        <rect key="frame" x="696" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="FHO-Tu-bSX"/>
+                                            <constraint firstAttribute="width" constant="40" id="WCW-nD-4qz"/>
+                                        </constraints>
+                                        <state key="normal" image="200 x 200 MusicPlay"/>
                                         <connections>
                                             <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9G1-5Q-7uL"/>
                                         </connections>
@@ -73,7 +74,6 @@
                         <outlet property="musicDrawView" destination="Rma-X3-Jqb" id="AFB-Wm-YhY"/>
                         <outlet property="playButton" destination="jpP-Nh-TFS" id="Cx4-IV-jge"/>
                         <outlet property="recordButton" destination="Ih9-Wt-xmB" id="PBa-dx-fvf"/>
-                        <outlet property="restToggle" destination="ylA-mU-NX1" id="mO2-5u-CZd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -254,6 +254,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="200 x 200 MusicPlay" width="166" height="123"/>
+        <image name="200 x 200 Record" width="150" height="150"/>
         <image name="back" width="30" height="30"/>
         <image name="details" width="30" height="30"/>
     </resources>

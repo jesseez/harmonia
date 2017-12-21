@@ -23,9 +23,13 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
     //Outlets
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet weak var restToggle: UIButton!
     @IBOutlet weak var musicDrawView: MusicDrawView!
     
+    //Images
+    let playImage = UIImage(named: "200 x 200 MusicPlay")
+    let stopImage = UIImage(named: "200 x 200 StopButton")
+    let recordImage = UIImage(named: "200 x 200 Record")
+    let stopRecordImage = UIImage(named: "200 x 200 StopRecord")
     
     //Next ViewController
     var aboutView:UIViewController?
@@ -37,12 +41,11 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        restToggle.isHidden = true
-        playButton.isHidden = true
         scaleManager = Scale(root:root)
         scale = scaleManager?.getMajorScale()
         musicDrawView.initNoteBounds()
         musicDrawView.setScale(scale: scale!)
+        playButton.isEnabled = false
         
         callback = initCallback()
     }
@@ -105,17 +108,17 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
     
     func initCallback() -> (()->Void) {
         let callback:(() -> Void) = {
-            self.recordButton.isHidden = false
-            self.playButton.setTitle("Play", for: .normal)
+            self.recordButton.isEnabled = true
+            self.playButton.setImage(self.playImage, for: .normal)
             self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
         return callback
     }
     
     func setValuesOnPlay(){
-        playButton.setTitle("Stop", for: .normal)
+        playButton.setImage(stopImage, for: .normal)
         isPlaying = true
-        self.recordButton.isHidden = true
+        recordButton.isEnabled = false
     }
     
     func getConstraintSize()->Float{
@@ -126,14 +129,16 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
     
     @IBAction func toggleRecording(_ sender: UIButton) {
         if(!musicDrawView.isRecording){
-            sender.setTitle("Stop", for: .normal)
-            playButton.isHidden = true
+            sender.setImage(stopRecordImage, for: .normal)
+            playButton.isEnabled = false
             musicDrawView.startRecording()
             self.navigationItem.rightBarButtonItem?.isEnabled = false
         } else {
-            sender.setTitle("Record", for: .normal)
-            playButton.isHidden = false
+            sender.setImage(recordImage, for: .normal)
             self.navigationItem.rightBarButtonItem?.isEnabled = true
+            if(musicDrawView.noteEvents.count > 0){
+                playButton.isEnabled = true
+            }
         }
         
         musicDrawView.isRecording = !musicDrawView.isRecording
@@ -168,7 +173,7 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
             case 2:
                 scale = scaleManager!.getMinorScale()
             default:
-            print("you have an error with your style picker")
+                print("you have an error with your style picker")
         }
         
         musicDrawView.setScale(scale: scale!)
