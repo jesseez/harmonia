@@ -21,8 +21,6 @@ class MinorClassicalChordFinder : ChordFinder{
         
         nextChord = [ChordStructure : [WeightedChord]]()
         
-        //TODO: CHANGE ALL OF THESE
-        
         nextChord[CoreChord.i] = [WeightedChord(weight:1, chord:CoreChord.i),
                                   WeightedChord(weight:0.95, chord:CoreChord.iiº),
                                   WeightedChord(weight:0.01, chord:CoreChord.III),

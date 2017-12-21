@@ -24,6 +24,7 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var musicDrawView: MusicDrawView!
+    @IBOutlet weak var musicDisplayView: MelodyDisplayView!
     
     //Images
     let playImage = UIImage(named: "200 x 200 MusicPlay")

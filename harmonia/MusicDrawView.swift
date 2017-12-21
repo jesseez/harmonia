@@ -8,16 +8,12 @@
 
 import UIKit
 
-class MusicDrawView : UIView{
-    
-    
-
+class MusicDrawView : SegmentedView {
     
     let octaveLength = UInt8(12)
     var scale:[UInt8]?
     var player = MidiPlayer(num: 64, drum: false)
     var timer = Stopwatch()
-    var noteBounds:[NoteBound]?
     
     var noteEvents = [NoteEvent]()
     private var currentEvent:NoteEvent?
@@ -239,54 +235,6 @@ class MusicDrawView : UIView{
     func endCurrentEvent(){
         currentEvent?.length = timer.getElapsedTime()
         noteEvents.append(currentEvent!)
-    }
-    
-    public func initNoteBounds(){
-        
-        if(noteBounds != nil){
-            return
-        }
-        
-        let realEstate = Double(self.frame.height)
-        
-        let noteBoundHeight = realEstate / 16
-        
-        var bounds = [NoteBound]()
-        
-        //NOTE: ORDER IS IMPORTANT
-        
-        var currentHeight = 0.0
-        bounds.append(NoteBound(note: 14, upperBound: nil, lowerBound: currentHeight + noteBoundHeight))
-        
-        currentHeight += noteBoundHeight
-        
-        //Add the top values (minus the first because that doesn't have an upper bound
-        for i in (8...13).reversed(){
-            bounds.append(NoteBound(note: UInt8(i), upperBound: currentHeight, lowerBound: currentHeight + noteBoundHeight))
-            
-            currentHeight += noteBoundHeight
-        }
-        
-        
-        //Root takes up twice as much space just cuz
-        bounds.append(NoteBound(note: UInt8(7), upperBound: currentHeight, lowerBound: currentHeight + (2 * noteBoundHeight)))
-        
-        
-        currentHeight += (2 * noteBoundHeight)
-        
-        //Add the bottom values (minus the last because that doesn't have a lower bound
-        for i in (1...6).reversed(){
-            bounds.append(NoteBound(note: UInt8(i), upperBound: currentHeight, lowerBound: currentHeight + noteBoundHeight))
-            
-            currentHeight += noteBoundHeight
-        }
-        
-        
-        //Add the last value with no bottom bound
-        bounds.append(NoteBound(note: 0, upperBound: currentHeight, lowerBound: nil))
-        
-        
-        noteBounds = bounds
     }
     
     override func draw(_ rect: CGRect) {

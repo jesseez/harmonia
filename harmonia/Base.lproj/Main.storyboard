@@ -21,6 +21,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VeH-tY-vqq" customClass="MelodyDisplayView" customModule="harmonia" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="768" height="888"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rma-X3-Jqb" customClass="MusicDrawView" customModule="harmonia" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="768" height="888"/>
                             </view>
@@ -71,6 +76,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="musicDisplayView" destination="VeH-tY-vqq" id="Epw-7g-jfI"/>
                         <outlet property="musicDrawView" destination="Rma-X3-Jqb" id="AFB-Wm-YhY"/>
                         <outlet property="playButton" destination="jpP-Nh-TFS" id="Cx4-IV-jge"/>
                         <outlet property="recordButton" destination="Ih9-Wt-xmB" id="PBa-dx-fvf"/>
