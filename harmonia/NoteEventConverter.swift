@@ -16,30 +16,16 @@ class NoteEventConverter : NSObject{
         
         let second = TimeInterval(exactly: 1)
         let beatsPerSecond = Double(tempo) / 60.0
-        let tempoTime:TimeInterval = (second?.divided(by: beatsPerSecond))!
+        let tempoTime:TimeInterval = second! / beatsPerSecond
 
-        var doubleWhole = TimeInterval(tempoTime)
-        doubleWhole.multiply(by: 8)
-        
-        var dottedWhole = TimeInterval(tempoTime)
-        dottedWhole.multiply(by: 6)
-        
-        var whole = TimeInterval(tempoTime)
-        whole.multiply(by: 4)
-        
-        var dottedHalf = TimeInterval(tempoTime)
-        dottedHalf.multiply(by: 3)
-        
-        var half = TimeInterval(tempoTime)
-        half.multiply(by: 2)
-        
-        var dottedQuarter = TimeInterval(tempoTime)
-        dottedQuarter.multiply(by: 1.5)
-        
-        let quarter = TimeInterval(tempoTime)
-        
-        var eighth = TimeInterval(tempoTime)
-        eighth.divide(by: 2)
+        let doubleWhole = tempoTime * 8
+        let dottedWhole = tempoTime * 6
+        let whole = tempoTime * 4
+        let dottedHalf = tempoTime * 3
+        let half = tempoTime * 2
+        let dottedQuarter = tempoTime * 1.5
+        let quarter = tempoTime
+        let eighth = tempoTime / 2
         
         var melody = [Note]()
         

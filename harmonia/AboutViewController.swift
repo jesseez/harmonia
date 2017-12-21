@@ -99,7 +99,7 @@ class AboutViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
         let strTitle = self.delegate!.stylePicker[row]
-        let attString = NSAttributedString(string: strTitle, attributes: [NSForegroundColorAttributeName : UIColor.white])
+        let attString = NSAttributedString(string: strTitle, attributes: [NSAttributedStringKey.foregroundColor : UIColor.white])
         return attString
     }
     

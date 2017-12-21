@@ -14,7 +14,8 @@ class MusicDrawView : UIView{
 
     
     let octaveLength = UInt8(12)
-    var scale:Scale = Scale(root: 72)
+    var scale:[UInt8]?
+    var player = MidiPlayer(num: 64, drum: false)
     var timer = Stopwatch()
     var noteBounds:[NoteBound]?
     
@@ -23,6 +24,8 @@ class MusicDrawView : UIView{
     
     private var currentNoteBound:NoteBound? = nil
     private var currentBoundIndex = 0
+    
+    var currentNote:UInt8?
     
     var isRecording = false
     var includeRestsAtBeginning = true
@@ -69,6 +72,10 @@ class MusicDrawView : UIView{
             currentBoundIndex = (noteBounds?.index(of: currentNoteBound!))!
         
             currentEvent = NoteEvent(note: currentNoteBound?.note)
+            
+            currentNote = getNoteByIndex(index: currentNoteBound?.note)
+            tryPlayNote()
+            
         
             self.setNeedsDisplay()
         }
@@ -98,6 +105,11 @@ class MusicDrawView : UIView{
                 currentNoteBound = noteBounds?[currentBoundIndex]
                 
                 currentEvent = NoteEvent(note: currentNoteBound?.note)
+                
+                tryStopNote()
+                currentNote = getNoteByIndex(index: currentNoteBound?.note)
+                tryPlayNote()
+                
             }
         }
         
@@ -110,6 +122,11 @@ class MusicDrawView : UIView{
                 currentNoteBound = noteBounds?[currentBoundIndex]
                 
                 currentEvent = NoteEvent(note: currentNoteBound?.note)
+                
+                tryStopNote()
+                currentNote = getNoteByIndex(index: currentNoteBound?.note)
+                tryPlayNote()
+                
             }
         }
         
@@ -127,6 +144,8 @@ class MusicDrawView : UIView{
         
         currentNoteBound = nil
         
+        tryStopNote()
+        
         //diminish drawing
         
         if(lines.count > 0){
@@ -135,8 +154,36 @@ class MusicDrawView : UIView{
         }
     }
     
+    public func setScale(scale: [UInt8]) {
+        self.scale = scale
+    }
     
-    @objc private func diminishLine(){
+    func tryPlayNote(){
+        if(currentNote != nil){
+            player.playNote(pitch: currentNote!, velocity: UInt8(90))
+        }
+    }
+    
+    func tryStopNote(){
+        if(currentNote != nil){
+            player.stopNote(note: currentNote!)
+        }
+    }
+    
+    private func getNoteByIndex(index:UInt8?) -> UInt8? {
+        let magicIndex = 7 //Based on the logic, 7 is the length of an octave-1 to accomodate for the index
+        
+        if(index == nil){
+            return nil
+        } else {
+            let octaveChange = Int(floor(Double(index!)/Double(magicIndex)))
+            let distance = octaveChange * Int(Scale.OCTAVE_LENGTH)
+            
+            return scale![Int(index!)%magicIndex] + UInt8(distance)
+        }
+    }
+    
+    @objc private func diminishLine() {
         if(lines.count > 0){
             lines.remove(at: 0)
         }

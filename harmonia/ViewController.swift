@@ -14,6 +14,8 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
     var player = MelodyPlayer()
     var beatsPerMeasure = 4.0
     var root = UInt8(60)
+    var scaleManager:Scale?
+    var scale:[UInt8]?
     let harmonyRoot = UInt8(48)
     var isPlaying = false
     var multiplier = 2
@@ -37,9 +39,10 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
         super.viewDidLoad()
         restToggle.isHidden = true
         playButton.isHidden = true
-        //setTempoDisplay()
-        //setBeatsPerMeasureDisplay()
+        scaleManager = Scale(root:root)
+        scale = scaleManager?.getMajorScale()
         musicDrawView.initNoteBounds()
+        musicDrawView.setScale(scale: scale!)
         
         callback = initCallback()
     }
@@ -68,26 +71,18 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
     @IBAction func play(_ sender: UIButton) {
         if(!isPlaying){
             if(!musicDrawView.noteEvents.isEmpty){
-
-                let scale = Scale(root: root)
                 
                 var harmony = [Chord]()
-                var melody = [Note]()
+                let melody =  NoteEventConverter.convertEvents(events: musicDrawView.noteEvents, tempo: (tempo*multiplier), scale: scale!)
             
                 switch styleNumber {
                 case 0:
-                    melody = NoteEventConverter.convertEvents(events: musicDrawView.noteEvents, tempo: (tempo*multiplier), scale: scale.getMajorScale())
-                    
                     harmony = HarmonyFactory.generateClassicalHarmony(root: harmonyRoot, melody: melody, beatsPerMeasure: beatsPerMeasure)
                     
                 case 1:
-                    melody = NoteEventConverter.convertEvents(events: musicDrawView.noteEvents, tempo: (tempo*multiplier), scale: scale.getMajorScale())
-                    
                     harmony = HarmonyFactory.generateModernHarmony(root: harmonyRoot, melody: melody, beatsPerMeasure: beatsPerMeasure)
                     
                 case 2:
-                    melody = NoteEventConverter.convertEvents(events: musicDrawView.noteEvents, tempo: (tempo*multiplier), scale: scale.getMinorScale())
-                    
                     harmony = HarmonyFactory.generateMinorClassicalHarmony(root: harmonyRoot, melody: melody, beatsPerMeasure: beatsPerMeasure)
                     
                 default:
@@ -110,8 +105,6 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
         let callback:(() -> Void) = {
             self.recordButton.isHidden = false
             self.playButton.setTitle("Play", for: .normal)
-//            self.tempoStepper.isEnabled = true
-//            self.beatsPerMeasureStepper.isEnabled = true
         }
         return callback
     }
@@ -120,8 +113,6 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
         playButton.setTitle("Stop", for: .normal)
         isPlaying = true
         self.recordButton.isHidden = true
-//        self.tempoStepper.isEnabled = false
-//        self.beatsPerMeasureStepper.isEnabled = false
     }
     
     func getConstraintSize()->Float{
@@ -164,6 +155,19 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
     
     func setStyleNumber(number:Int){
         self.styleNumber = number
+        
+        switch number {
+            case 0:
+                scale = scaleManager!.getMajorScale()
+            case 1:
+                scale = scaleManager!.getMajorScale()
+            case 2:
+                scale = scaleManager!.getMinorScale()
+            default:
+            print("you have an error with your style picker")
+        }
+        
+        musicDrawView.setScale(scale: scale!)
     }
     
     func getInitialStyle() -> Int{
@@ -177,52 +181,6 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
     func getInitialBeatsPerMeasure() -> Double{
         return beatsPerMeasure
     }
-    
-    
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return stylePicker.count
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return stylePicker[row]
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        styleNumber = row
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//        
-//        let strTitle = stylePicker[row]
-//        let attString = NSAttributedString(string: strTitle, attributes: [NSForegroundColorAttributeName : UIColor.white])
-//        return attString
-//    }
-
-    
-//    @IBAction func changeTempo(_ sender: UIStepper) {
-//        tempo = Int(sender.value)
-//        setTempoDisplay()
-//    }
-
-    
-//    func setTempoDisplay(){
-//        tempoDisplay.text = String(tempo)
-//    }
-    
-    
-//    @IBAction func changeBeatsPerMeasure(_ sender: UIStepper) {
-//        beatsPerMeasure = sender.value
-//        setBeatsPerMeasureDisplay()
-//    }
-    
-//    func setBeatsPerMeasureDisplay(){
-//        beatsPerMeasureDisplay.text = String(beatsPerMeasure)
-//    }
-    
     
     
     //for testing purposes
@@ -325,17 +283,17 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
         
         let scale:Scale = Scale(root: 72)
         
-         var harmony = HarmonyFactory.generateModernHarmony(root: 48, melody: melody, beatsPerMeasure: 4)
+        var harmony = HarmonyFactory.generateModernHarmony(root: 48, melody: melody, beatsPerMeasure: 4)
          
-         harmony.insert(Chord(), at: 0)
+        harmony.insert(Chord(), at: 0)
          
-         melody.insert(Note(value: scale.getMajorSeventh(), length: Length.eighth), at: 0)
-         melody.insert(Note(value: scale.getMajorSixth(), length: Length.eighth), at: 0)
-         melody.insert(Note(value: scale.getMajorThird(), length: Length.eighth), at: 0)
-         melody.insert(Note(value: nil, length: Length.eighth), at: 0)
-         melody.insert(Note(value: nil, length: Length.half), at: 0)
+        melody.insert(Note(value: scale.getMajorSeventh(), length: Length.eighth), at: 0)
+        melody.insert(Note(value: scale.getMajorSixth(), length: Length.eighth), at: 0)
+        melody.insert(Note(value: scale.getMajorThird(), length: Length.eighth), at: 0)
+        melody.insert(Note(value: nil, length: Length.eighth), at: 0)
+        melody.insert(Note(value: nil, length: Length.half), at: 0)
          
-         player.play(tempo: 120, beatsPerMeasure: 4, melody: melody, harmony: harmony)
+        player.play(tempo: 120, beatsPerMeasure: 4, melody: melody, harmony: harmony, callback: callback!)
     }
     
     

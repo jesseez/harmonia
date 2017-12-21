@@ -45,8 +45,8 @@ class MelodyPlayer : NSObject{
         let second = TimeInterval(exactly: 1)
         let beatsPerSecond = Double(tempo) / 60.0
         
-        self.tempoTime =  (second?.divided(by: beatsPerSecond))!
-        self.measureTime = tempoTime?.multiplied(by: beatsPerMeasure)
+        self.tempoTime =  second! / beatsPerSecond
+        self.measureTime = tempoTime! * beatsPerMeasure
         
         melodyIndex = 0
         harmonyIndex = 0
@@ -89,8 +89,8 @@ class MelodyPlayer : NSObject{
             //set next event
             if(melodyIndex < (melody?.count)!){
                 melodyIndex += 1
-                let interval = tempoTime?.multiplied(by: (note?.length.rawValue)!)
-                _ = Timer.scheduledTimer(timeInterval: interval!, target: self, selector: #selector(playNextMelody), userInfo: nil, repeats: false)
+                let interval = tempoTime! * (note?.length.rawValue)!
+                _ = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(playNextMelody), userInfo: nil, repeats: false)
 
             }
         }
