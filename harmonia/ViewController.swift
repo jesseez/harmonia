@@ -94,10 +94,12 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
             
                 player.play(tempo: tempo, beatsPerMeasure: beatsPerMeasure, melody: melody, harmony: harmony, callback: callback!)
                 
+                self.navigationItem.rightBarButtonItem?.isEnabled = false
             }
         } else {
             player.stop()
             isPlaying = false
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
     }
     
@@ -105,6 +107,7 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
         let callback:(() -> Void) = {
             self.recordButton.isHidden = false
             self.playButton.setTitle("Play", for: .normal)
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
         return callback
     }
@@ -126,10 +129,11 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
             sender.setTitle("Stop", for: .normal)
             playButton.isHidden = true
             musicDrawView.startRecording()
-            
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
         } else {
             sender.setTitle("Record", for: .normal)
             playButton.isHidden = false
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
         }
         
         musicDrawView.isRecording = !musicDrawView.isRecording
