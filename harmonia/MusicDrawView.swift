@@ -72,7 +72,6 @@ class MusicDrawView : SegmentedView {
         }
         
         let point = touches.first?.location(in: self)
-        print(point!.y)
         lines.append(Line(start: currentPoint!, end: point!))
         currentPoint = point
         
