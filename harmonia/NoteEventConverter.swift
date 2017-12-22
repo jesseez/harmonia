@@ -35,7 +35,10 @@ class NoteEventConverter : NSObject{
             
             let note = getNoteByIndex(index: event.note, scale: scale)
             
-            if(length >= doubleWhole || isCloserToFirst(length: length, first: doubleWhole, second: dottedWhole))
+            if(melody.isEmpty && event.note == nil){
+                //we don't want to do anything here. We don't want rests at the begining
+            }
+            else if(length >= doubleWhole || isCloserToFirst(length: length, first: doubleWhole, second: dottedWhole))
             {
                 melody.append(Note(value: note, length: Length.doubleWhole))
             }

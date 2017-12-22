@@ -144,7 +144,7 @@ class MelodyDisplayView : SegmentedView {
                     //flat
                     var numFlatFrames = Int(round((note.length.rawValue - 0.25) * Double(framesPerBeat)))
                     
-                    if(i % 20 == 0){
+                    if(i % 5 == 0){
                         //just trying to make the animation fit with the music better
                         numFlatFrames = numFlatFrames + 1
                     }
