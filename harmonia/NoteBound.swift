@@ -12,11 +12,13 @@ class NoteBound : NSObject{
     
     let note:UInt8
     let upperBound:Double?
+    let middleBound:Double
     let lowerBound:Double?
     
-    init(note:UInt8, upperBound:Double?, lowerBound:Double?){
+    init(note:UInt8, upperBound:Double?, middleBound:Double, lowerBound:Double?){
         self.note = note
         self.upperBound = upperBound
+        self.middleBound = middleBound
         self.lowerBound = lowerBound
     }
 }

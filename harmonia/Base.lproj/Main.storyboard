@@ -28,6 +28,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rma-X3-Jqb" customClass="MusicDrawView" customModule="harmonia" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="768" height="888"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dIj-vt-PLf" userLabel="OptionsContainer">
                                 <rect key="frame" x="16" y="968" width="736" height="40"/>
@@ -76,7 +77,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="musicDisplayView" destination="VeH-tY-vqq" id="Epw-7g-jfI"/>
+                        <outlet property="melodyDisplayView" destination="VeH-tY-vqq" id="ZMg-K4-WH4"/>
                         <outlet property="musicDrawView" destination="Rma-X3-Jqb" id="AFB-Wm-YhY"/>
                         <outlet property="playButton" destination="jpP-Nh-TFS" id="Cx4-IV-jge"/>
                         <outlet property="recordButton" destination="Ih9-Wt-xmB" id="PBa-dx-fvf"/>

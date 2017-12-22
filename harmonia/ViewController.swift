@@ -24,7 +24,7 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var musicDrawView: MusicDrawView!
-    @IBOutlet weak var musicDisplayView: MelodyDisplayView!
+    @IBOutlet weak var melodyDisplayView: MelodyDisplayView!
     
     //Images
     let playImage = UIImage(named: "200 x 200 MusicPlay")
@@ -46,6 +46,8 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
         scale = scaleManager?.getMajorScale()
         musicDrawView.initNoteBounds()
         musicDrawView.setScale(scale: scale!)
+        melodyDisplayView.initNoteBounds()
+        
         playButton.isEnabled = false
         
         callback = initCallback()
@@ -94,14 +96,16 @@ class ViewController: UIViewController, AboutViewControllerDelegate{
                 }
             
                 setValuesOnPlay()
-                
+                melodyDisplayView.prepareMelody(melody: melody, tempo: tempo, scale: scale!)
             
                 player.play(tempo: tempo, beatsPerMeasure: beatsPerMeasure, melody: melody, harmony: harmony, callback: callback!)
+                melodyDisplayView.play()
                 
                 self.navigationItem.rightBarButtonItem?.isEnabled = false
             }
         } else {
             player.stop()
+            melodyDisplayView.stop()
             isPlaying = false
             self.navigationItem.rightBarButtonItem?.isEnabled = true
         }

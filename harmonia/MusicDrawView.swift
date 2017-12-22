@@ -10,41 +10,27 @@ import UIKit
 
 class MusicDrawView : SegmentedView {
     
-    let octaveLength = UInt8(12)
-    var scale:[UInt8]?
-    var player = MidiPlayer(num: 64, drum: false)
-    var timer = Stopwatch()
+    private var scale:[UInt8]?
+    private var player = MidiPlayer(num: 64, drum: false)
+    private var timer = Stopwatch()
     
-    var noteEvents = [NoteEvent]()
+
     private var currentEvent:NoteEvent?
     
     private var currentNoteBound:NoteBound? = nil
     private var currentBoundIndex = 0
     
-    var currentNote:UInt8?
+    private var currentNote:UInt8?
     
+    var noteEvents = [NoteEvent]()
     var isRecording = false
-    var includeRestsAtBeginning = true
+    var includeRestsAtBeginning = false
     
     
-    var currentPoint:CGPoint?
-    var lines = [Line]()
+    private var currentPoint:CGPoint?
+    private var lines = [Line]()
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        UIGraphicsBeginImageContext(self.frame.size)
-        UIImage(named: "background")?.draw(in: self.bounds)
-        
-        if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext(){
-            UIGraphicsEndImageContext()
-            self.backgroundColor = UIColor(patternImage: image)
-        }else{
-            UIGraphicsEndImageContext()
-            debugPrint("Image not available")
-        }
-    }
-    
+
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if(!isRecording){
@@ -86,6 +72,7 @@ class MusicDrawView : SegmentedView {
         }
         
         let point = touches.first?.location(in: self)
+        print(point!.y)
         lines.append(Line(start: currentPoint!, end: point!))
         currentPoint = point
         
@@ -243,10 +230,11 @@ class MusicDrawView : SegmentedView {
         
         context?.setLineCap(CGLineCap.round)
         
-        
         for line in lines.suffix(20){
-            context?.move(to: line.start)
-            context?.addLine(to: line.end)
+            if(line.start != nil && line.end != nil){
+                context?.move(to: line.start!)
+                context?.addLine(to: line.end!)
+            }
         }
         
         context?.setStrokeColor(red: 0, green: 0.3, blue: 1, alpha: 0.8)
