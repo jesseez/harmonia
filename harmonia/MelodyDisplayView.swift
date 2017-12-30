@@ -27,22 +27,6 @@ class MelodyDisplayView : SegmentedView {
     //unfortunately since i have so many points, it slows down the phone... so i gotta keep it short
     private var numSegmentsShown = 30
     
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        UIGraphicsBeginImageContext(self.frame.size)
-        UIImage(named: "background")?.draw(in: self.bounds)
-        
-        if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext(){
-            UIGraphicsEndImageContext()
-            self.backgroundColor = UIColor(patternImage: image)
-        }else{
-            UIGraphicsEndImageContext()
-            debugPrint("Image not available")
-        }
-    }
-    
     public func prepareMelody(melody:[Note], tempo:Int, scale:[UInt8]){
         
         self.melody = melody
@@ -144,7 +128,7 @@ class MelodyDisplayView : SegmentedView {
                     //flat
                     var numFlatFrames = Int(round((note.length.rawValue - 0.25) * Double(framesPerBeat)))
                     
-                    if(i % 5 == 0){
+                    if(i % 3 == 0){
                         //just trying to make the animation fit with the music better
                         numFlatFrames = numFlatFrames + 1
                     }
